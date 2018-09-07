@@ -40,7 +40,7 @@ export class Home extends React.PureComponent {
               })}
             >
               <i className="i-sign-in" />
-              <span>Start</span>
+              <span>Login/Start</span>
             </a>
           </div>
         </div>

@@ -22,6 +22,8 @@ import Footer from 'components/Footer';
 import RoutePublic from 'components/RoutePublic';
 import RoutePrivate from 'components/RoutePrivate';
 
+import Login from 'components/Login';
+
 export class App extends React.Component {
   static propTypes = {
     app: PropTypes.object.isRequired,
@@ -51,17 +53,18 @@ export class App extends React.Component {
         >
           <Helmet
             defer={false}
-            htmlAttributes={{ lang: 'pt-br' }}
+            htmlAttributes={{ lang: 'en-Us' }}
             encodeSpecialCharacters={true}
             defaultTitle={config.title}
             titleTemplate={`%s | ${config.name}`}
-            titleAttributes={{ itemprop: 'name', lang: 'pt-br' }}
+            titleAttributes={{ itemprop: 'name', lang: 'en-Us' }}
           />
-          {user.isAuthenticated && <Header dispatch={dispatch} user={user} />}
+          {user.isAuthenticated && <Header dispatch={dispatch} user={user} isAuthenticated={user.isAuthenticated} />}
           <main className="app__main">
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
-              <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
+              {/* <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} /> */}
+              <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Login} />
               <Route component={NotFound} />
             </Switch>
           </main>

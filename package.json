@@ -1,7 +1,7 @@
 {
   "name": "react-redux-saga-boilerplate",
   "title": "react-redux-saga-boilerplate",
-  "description": "React-Redux-Saga Boilerplate",
+  "description": "AddApptr Boilerplate",
   "version": "2018.8.1",
   "author": "Gil Barbara <gilbarbara@gmail.com>",
   "repository": {
@@ -28,6 +28,7 @@
     "fbjs": "^0.8.17",
     "history": "^4.7.2",
     "immutability-helper": "^2.7.1",
+    "localStorage": "^1.0.3",
     "lodash": "^4.17.10",
     "mobile-detect": "^1.4.2",
     "modernizr": "^3.6.0",
@@ -91,6 +92,8 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-imports": "^1.5.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.15",
+    "bcryptjs": "^2.4.3",
+    "btoa": "^1.2.1",
     "bundlesize": "^0.17.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",
