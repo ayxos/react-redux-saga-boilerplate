@@ -1,35 +1,42 @@
 import React from 'react';
-import { mount } from 'enzyme';
 
 import Loader from 'components/Loader';
 
-const mockDispatch = jest.fn();
-
-function setup() {
-  const props = {
-    app: {},
-    dispatch: mockDispatch,
-  };
-
-  return mount(<Loader {...props} />);
-}
-
 describe('Loader', () => {
-  const wrapper = setup();
+  let wrapper;
 
-  it('should be a StatelessComponent', () => {
-    expect(wrapper.instance()).toBeNull();
-  });
-
-  it('should render properly with pulse type', () => {
-    expect(wrapper.html()).toMatchSnapshot();
-  });
-
-  it('should render properly with rotate type', () => {
-    wrapper.setProps({
-      pulse: false,
+  describe('with type `grow` (default)', () => {
+    it('should render properly', () => {
+      wrapper = mount(<Loader />);
+      expect(wrapper).toMatchSnapshot();
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    it('should render properly with options', () => {
+      wrapper = mount(<Loader block size="10rem" />);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('with type `pulse`', () => {
+    it('should render properly', () => {
+      wrapper = mount(<Loader type="pulse" />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render properly with options', () => {
+      wrapper = mount(<Loader block type="pulse" size="10rem" />);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+  describe('with type `rotate`', () => {
+    it('should render properly', () => {
+      wrapper = mount(<Loader type="rotate" />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render properly with options', () => {
+      wrapper = mount(<Loader block type="rotate" size="10rem" />);
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

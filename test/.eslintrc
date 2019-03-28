@@ -1,8 +1,10 @@
 {
   "globals": {
-    "getSaga": true,
     "jsdom": false,
-    "navigate": true
+    "navigate": true,
+    "mount": false,
+    "shallow": false,
+    "render": false
   },
   "rules": {
     "no-console": 0,

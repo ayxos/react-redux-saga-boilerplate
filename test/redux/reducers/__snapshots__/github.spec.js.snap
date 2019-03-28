@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Github should handle undefined 1`] = `
+Object {
+  "repos": Object {
+    "data": Object {},
+    "message": "",
+    "query": "",
+    "status": "idle",
+  },
+}
+`;
+
+exports[`Github should handle undefined 2`] = `
+Object {
+  "repos": Object {
+    "data": Object {},
+    "message": "",
+    "query": "",
+    "status": "idle",
+  },
+}
+`;
+
+exports[`Github should handle undefined 3`] = `
+Object {
+  "repos": Object {
+    "data": Object {},
+    "message": "",
+    "query": "",
+    "status": "idle",
+  },
+}
+`;
+
+exports[`Github should return the initial state 1`] = `
+Object {
+  "repos": Object {
+    "data": Object {},
+    "message": "",
+    "query": "",
+    "status": "idle",
+  },
+}
+`;

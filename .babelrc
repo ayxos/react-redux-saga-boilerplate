@@ -4,19 +4,19 @@
       "@babel/preset-env",
       {
         "useBuiltIns": "entry",
-        "modules": false,
-        "targets": {
-          "browsers": [
-            "last 2 versions",
-            "safari >= 7"
-          ]
-        }
+        "modules": false
       }
     ],
     "@babel/preset-react",
     "@babel/preset-flow"
   ],
   "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "fileName": false
+      }
+    ],
     "@babel/plugin-proposal-function-bind",
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-logical-assignment-operators",

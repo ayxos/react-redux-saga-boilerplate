@@ -1,0 +1,31 @@
+{
+  "constants": {
+    "colors": [
+      "rgb(255, 205, 99)",
+      "rgb(3, 111, 188)",
+      "rgb(49,163,75)",
+      "rgb(255,68,62)",
+      "rgb(128, 57, 142)",
+      "rgb(255,154,50)",
+      "rgb(110,77,27)",
+      "rgb(56,162,231)",
+      "rgb(254,101,122)",
+      "rgb(201,237,114)"
+    ],
+    "defaultDates": [
+      { "key": "0", "option": "Today" },
+      { "key": "1", "option": "Yesterday" },
+      { "key": "2", "option": "This week" },
+      { "key": "3", "option": "Last week" },
+      { "key": "4", "option": "This month" },
+      { "key": "5", "option": "Last month" }
+    ],
+    "optionsYear": [
+      { "key": 2017, "name": "2017" },
+      { "key": 2018, "name": "2018" },
+      { "key": 2019, "name": "2019" },
+      { "key": 2020, "name": "2020" },
+      { "key": 2021, "name": "2021" }
+    ]
+  }
+}

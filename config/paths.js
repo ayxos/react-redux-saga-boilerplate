@@ -4,21 +4,34 @@ const path = require('path');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolvePath = relativePath => path.resolve(appDirectory, relativePath);
 
+const moduleFileExtensions = ['js', 'json', 'jsx', 'mjs'];
+
+const resolveModule = (resolveFn, filePath) => {
+  const extension = moduleFileExtensions.find(ext =>
+    fs.existsSync(resolveFn(`${filePath}.${ext}`)),
+  );
+
+  if (extension) {
+    return resolveFn(`${filePath}.${extension}`);
+  }
+
+  return resolveFn(`${filePath}.js`);
+};
+
 module.exports = {
-  app: resolvePath('app'),
+  appPath: resolvePath('.'),
+  appAssets: resolvePath('assets'),
+  appBuild: resolvePath('build'),
   appHtml: resolvePath('assets/index.html'),
-  appIndexJs: resolvePath('app/scripts/index.jsx'),
-  appScripts: resolvePath('app/scripts'),
-  assets: resolvePath('assets'),
+  appIndexJs: resolveModule(resolvePath, 'src/index'),
+  appModernizr: resolvePath('src/vendor/modernizr-custom.js'),
+  appModernizrrc: resolvePath('src/vendor/modernizrrc.json'),
+  appPolyfills: resolvePath('src/polyfills'),
+  appSrc: resolvePath('src'),
   config: resolvePath('config'),
-  destination: resolvePath('dist'),
   dotenv: resolvePath('.env'),
-  modernizr: resolvePath('app/scripts/vendor/modernizr-custom.js'),
-  modernizrrc: resolvePath('config/modernizrrc.json'),
   nodeModules: resolvePath('node_modules'),
   packageJson: resolvePath('package.json'),
   publicPath: resolvePath('/'),
-  root: resolvePath(''),
-  store: resolvePath('app/scripts/store/index'),
   test: resolvePath('test'),
 };
